@@ -8,7 +8,7 @@ function App(props) {
   return (
     <main className='App'>
       <header className='Header'>
-        <h1>PlaceHolder</h1>
+        <h1>Trelloyes!</h1>
 
       </header>
       <div className='App-list'>{props.store.lists.map(list => <List header={list.header}
