@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<section
+  classname-list="true"
+>
+  <header />
+  <div
+    className="List-cards"
+  >
+    <ul>
+       
+      <li
+        className="card"
+      >
+        <button
+          type="button"
+        >
+          delete
+        </button>
+        <h3>
+          First card
+        </h3>
+        <p>
+          lorem ipsum
+        </p>
+      </li>
+    </ul>
+    <button
+      type="button"
+    >
+      delete
+    </button>
+  </div>
+</section>
+`;
