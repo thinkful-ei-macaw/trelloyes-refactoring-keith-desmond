@@ -50,26 +50,25 @@ class App extends Component {
 
   handleAddCard = (listId) => {
     const newCard = newRandomCard()
-
-    const newLists = this.state.store.lists.map(list => {
-      if (list.id === listId) {
-	return {
-          ...list,
-          cardIds: [...list.cardIds, newCard.id]
-        };
-      }
-      return list;
-    })
-
+  
+    const newStore = this.state.store
+  
+     newStore.lists.find(list => list.id === listId ).cardIds.push(newCard.id)
+     newStore.allCards[newCard.id]=newCard
+	// return {
+  //         ...list,
+  //         cardIds: [...list.cardIds, newCard.id]
+  //       };
+      
+    
+    
+  
     this.setState({
-      store: {
-        lists: newLists,
-        allCards: {
-          ...this.state.store.allCards,
-          [newCard.id]: newCard
-        }
-      }
+    
+      store: newStore
+     
     })
+    console.log(this.state.store.allCards)
   };
 
   render(){
@@ -83,7 +82,7 @@ class App extends Component {
       </header>
       <div className='App-list'>{store.lists.map(list => <List header={list.header}
         cards={list.cardIds.map(id =>store.allCards[id])} key={list.id}
-        onClickDelete={this.handleDeleteCard} onClickAdd={this.handleAddCard} />
+        onClickDelete={this.handleDeleteCard} onClickAdd={()=>this.handleAddCard(list.id)} />
 
       )}</div>
     </main>);
