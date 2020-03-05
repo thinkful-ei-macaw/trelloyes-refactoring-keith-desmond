@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './card';
 import './list.css';
 
-function List(props) {
+export default function List(props) {
   return <section classname-list="true">
     <header>{props.header}</header>
 
@@ -12,9 +12,10 @@ function List(props) {
         return <Card
           key={card.id}
           title={card.title}
-          content={card.content} />
+          content={card.content} 
+          onClickDelete={props.onClickDelete}/>
       })}</ul>
-      <button type="button">delete</button>
+      <button type="button" className='add-button' onClick={()=>props.OnClickAdd(props.id)}>Random Card</button>
 
 
 
@@ -22,4 +23,7 @@ function List(props) {
   </section>
 };
 
-export default List
+List.defaultProps={
+  onClickAdd: () => {},
+}
+
