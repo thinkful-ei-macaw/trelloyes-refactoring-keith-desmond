@@ -11,11 +11,12 @@ export default function List(props) {
       <ul> {props.cards.map((card) => {
         return <Card
           key={card.id}
+          id={card.id}
           title={card.title}
           content={card.content} 
           onClickDelete={props.onClickDelete}/>
       })}</ul>
-      <button type="button" className='add-button' onClick={()=>props.OnClickAdd(props.id)}>Random Card</button>
+      <button type="button" className='add-button' onClick={()=>props.onClickAdd(props.id)}>Random Card</button>
 
 
 

@@ -10,6 +10,6 @@ function Card(props) {
     </li>
   )
 }
- Card.propTypes={onClickDelete:()=>{}}
+//  Card.propTypes={onClickDelete:()=>{}}
 export default
   Card

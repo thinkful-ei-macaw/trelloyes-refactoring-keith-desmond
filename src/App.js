@@ -3,6 +3,7 @@ import List from './list';
 import STORE from './store';
 
 
+
 const newRandomCard = () => {
   const id = Math.random().toString(36).substring(2, 4)
     + Math.random().toString(36).substring(2, 4);
@@ -81,8 +82,8 @@ class App extends Component {
 
       </header>
       <div className='App-list'>{store.lists.map(list => <List header={list.header}
-        cards={list.cardIds.map(cardId =>store.allCards[cardId])} key={list.id}
-        onClickDelete={this.handleDelete} onClickAdd={this.handleAddCard} />
+        cards={list.cardIds.map(id =>store.allCards[id])} key={list.id}
+        onClickDelete={this.handleDeleteCard} onClickAdd={this.handleAddCard} />
 
       )}</div>
     </main>);
